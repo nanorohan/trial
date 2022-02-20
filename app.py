@@ -8,6 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 import streamlit as st
 import base64
+from PIL import Image
 
 #Function named dataframe_optimizer is defined. This will reduce space consumption by dataframes.
 #Credit - https://www.kaggle.com/rinnqd/reduce-memory-usage and 
@@ -101,14 +102,12 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-
-	st.title("Client Defaulter Tendency")
+	st.title()
 	html_temp = """
-	<div style="background-color:Gainsboro;padding:15px">
-	<h2 style="color:#MidnightBlue;text-align:center;">Client Defaulter Tendency</h2>
+	<div style="background-color:#FFEFD5;padding:15px">
+	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
 	</div>
 	"""
-	
 	main_bg = "loan.jpg"
 	main_bg_ext = "jpg"
 
