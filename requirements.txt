@@ -1,3 +1,7 @@
+gunicorn
+itsdangerous
+MarkupSafe
+Jinja2
 numpy
 pandas
 scipy
