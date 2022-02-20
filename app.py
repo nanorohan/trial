@@ -97,10 +97,10 @@ def inference(query):
 	query_data = np.concatenate((query_numerical_imputed_scaled, query_categorical_imputed_ohe.toarray()), axis = 1)
 	predictions = model.predict(query_data)
 	for i in range(len(predictions)):
-		       if predictions[i]=0:
-		       	predictions[i]="Low"
-		       else:
-		       	predictions[i]="High"
+		if predictions[i]==0:
+			predictions[i]="Low"
+		else:
+			predictions[i]="High"
 	return predictions
 @st.cache
 def convert_df(df):
