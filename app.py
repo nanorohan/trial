@@ -109,7 +109,7 @@ def main():
 	</div>
 	"""
 	
-	main_bg = "loan.jpeg"
+	main_bg = "loan.jpg"
 	main_bg_ext = "jpg"
 
 	side_bg = "space.jpg"
