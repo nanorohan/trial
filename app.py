@@ -96,7 +96,7 @@ def inference(query):
 	query_categorical_imputed_ohe = ohe.transform(query_categorical_imputed)
 	query_data = np.concatenate((query_numerical_imputed_scaled, query_categorical_imputed_ohe.toarray()), axis = 1)
 	predictions = model.predict(query_data)
-	for i in range(len(predictions):
+	for i in range(len(predictions)):
 		       if predictions[i]=0:
 		       	predictions[i]="Low"
 		       else:
