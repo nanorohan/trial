@@ -128,6 +128,7 @@ def main():
 	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
 	</div>
 	"""
+	st.markdown(html_temp,unsafe_allow_html=True)
 	
 	uploaded_file = st.file_uploader("Choose a file")       
 	if uploaded_file is not None:
