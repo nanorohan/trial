@@ -97,18 +97,18 @@ def inference(query):
 	query_categorical_imputed_ohe = ohe.transform(query_categorical_imputed)
 	query_data = np.concatenate((query_numerical_imputed_scaled, query_categorical_imputed_ohe.toarray()), axis = 1)
 	predictions = model.predict(query_data)
+	pred_cat=["Default Tendency"]
 	for i in range(len(predictions)):
 		if predictions[i]==0:
-			predictions[i]="Low"
+			pred_cat.append("Low")
 		else:
-			predictions[i]="High"
-	return predictions
+			pred_cat.append("High")
+	return pred_act
 @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	
 	header_pic = Image.open('loan.jpg')
 	st.image(header_pic, use_column_width=True)
 	# Side bar portion of code
@@ -130,7 +130,7 @@ def main():
 	</div>
 	"""
 	st.markdown(html_title,unsafe_allow_html=True)
-	print("\n\n")
+	print("\n\n\n\n")
 	html_template = """
 	<div style="background-color:#2F4F4F;padding:2px">
 	<h5 style="color:#FF6347;text-align:left;">Please adhere to the template below to fill in applicant details for predicting defaulting tendency</h5>
@@ -139,24 +139,28 @@ def main():
 	st.markdown(html_template,unsafe_allow_html=True)
 	with open("applicants_details_template.csv") as template_file:
 		st.download_button("Download Applicant details template", template_file, "applicants_details_template.csv", key='download-csv')	
-	print("\n\n")
+	print("\n\n\n\n")
 	html_uploader = """
 	<div style="background-color:#2F4F4F;padding:2px">
 	<h5 style="color:#FF6347;text-align:left;">Please upload applicant/s' details in required format</h5>
 	</div>
 	"""
+	print("\n\n\n\n")
 	st.markdown(html_uploader,unsafe_allow_html=True)
 	uploaded_file = st.file_uploader(" ")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
-		st.write(query_prediction)
+		translation= {39: None}
+		for i in range(len(query_prediction)):
+			st.write(query_prediction[i].translate(translation))
 		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
 		col_names.append('Defaulter Tendency')
 		pred_append.columns=col_names
 		csv=convert_df(pred_append)
+		print("\n\n\n\n")
 		html_file_dl = """
 		<div style="background-color:#2F4F4F;padding:2px">
 		<h5 style="color:#FF6347;text-align:left;">For downloading the predictions appended to the applicant details, click below link.</h5>
