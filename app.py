@@ -103,7 +103,7 @@ def inference(query):
 			pred_cat.append("Low")
 		else:
 			pred_cat.append("High")
-	return pred_act
+	return pred_cat
 @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
