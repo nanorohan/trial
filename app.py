@@ -102,12 +102,12 @@ def convert_df(df):
    
 def main():
 
-    st.title("Client Defaulter Tendency")
-    html_temp = """
-    <div style="background-color:Gainsboro;padding:15px">
-    <h2 style="color:#MidnightBlue;text-align:center;">Client Defaulter Tendency</h2>
-    </div>
-    """
+	st.title("Client Defaulter Tendency")
+	html_temp = """
+	<div style="background-color:Gainsboro;padding:15px">
+	<h2 style="color:#MidnightBlue;text-align:center;">Client Defaulter Tendency</h2>
+	</div>
+	"""
 	
 	main_bg = "loan.jpeg"
 	main_bg_ext = "jpg"
