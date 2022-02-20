@@ -130,16 +130,16 @@ def main():
 	</div>
 	"""
 	st.markdown(html_title,unsafe_allow_html=True)
-	
+	print("\n\n")
 	html_template = """
 	<div style="background-color:#2F4F4F;padding:2px">
 	<h5 style="color:#FF6347;text-align:left;">Please adhere to the template below to fill in applicant details for predicting defaulting tendency</h5>
 	</div>
 	"""
 	st.markdown(html_template,unsafe_allow_html=True)
-	template_file=applicants_details_template.csv
-	st.download_button("Download Applicant details template", template_file, "applicants_details_template.csv", key='download-csv')	
-
+	with open("applicants_details_template.csv") as template_file:
+		st.download_button("Download Applicant details template", template_file, "applicants_details_template.csv", key='download-csv')	
+	print("\n\n")
 	html_uploader = """
 	<div style="background-color:#2F4F4F;padding:2px">
 	<h5 style="color:#FF6347;text-align:left;">Please upload applicant/s' details in required format</h5>
