@@ -102,18 +102,12 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	st.title()
-	html_temp = """
-	<div style="background-color:#FFEFD5;padding:15px">
-	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
-	</div>
-	"""
 	main_bg = "loan.jpg"
 	main_bg_ext = "jpg"
 
 	side_bg = "space.jpg"
 	side_bg_ext = "jpg"
-
+	
 	st.markdown(
 		f"""
 		<style>
@@ -126,7 +120,15 @@ def main():
 		</style>
 		""",
 		unsafe_allow_html=True
-	)	
+	)
+	
+	st.title(" ")
+	html_temp = """
+	<div style="background-color:#FFEFD5;padding:15px">
+	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
+	</div>
+	"""
+	
 	uploaded_file = st.file_uploader("Choose a file")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
