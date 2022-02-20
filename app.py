@@ -100,6 +100,12 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
+	st.title("Client Defaulter Tendency")
+    	html_temp = """
+    	<div style="background-color:Gainsboro;padding:15px">
+    	<h2 style="color:MidnightBlue;text-align:center;">Client Defaulter Tendency</h2>
+    	</div>
+    	"""
 	uploaded_file = st.file_uploader("Choose a file")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
