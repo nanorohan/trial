@@ -106,7 +106,7 @@ def main():
 		query_prediction = inference(query)
 		st.write(query_prediction)
 		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
-		pred_append=pd.concat([query,pred_coll], axis=1, ignore_index=True)
+		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
 		csv=convert_df(pred_append)
 		st.download_button("Press to Download", csv)
 
