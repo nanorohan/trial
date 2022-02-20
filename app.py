@@ -103,10 +103,13 @@ def main():
 	uploaded_file = st.file_uploader("Choose a file")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
+		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
 		st.write(query_prediction)
 		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
+		col_names.append('Defaulter Tendency')
+		pred_append.columns=col_names
 		csv=convert_df(pred_append)
 		st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
 
