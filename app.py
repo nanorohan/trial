@@ -96,6 +96,11 @@ def inference(query):
 	query_categorical_imputed_ohe = ohe.transform(query_categorical_imputed)
 	query_data = np.concatenate((query_numerical_imputed_scaled, query_categorical_imputed_ohe.toarray()), axis = 1)
 	predictions = model.predict(query_data)
+	for i in range(len(predictions):
+		       if predictions[i]=0:
+		       	predictions[i]="Low"
+		       else:
+		       	predictions[i]="High"
 	return predictions
 @st.cache
 def convert_df(df):
@@ -118,14 +123,28 @@ def main():
 	st.sidebar.write("Women and Children First!")
 
 	st.title(" ")
-	html_temp = """
+	html_title = """
 	<div style="background-color:#FFEFD5;padding:15px">
 	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
 	</div>
 	"""
-	st.markdown(html_temp,unsafe_allow_html=True)
+	st.markdown(html_title,unsafe_allow_html=True)
 	
-	uploaded_file = st.file_uploader("Choose a file")       
+	html_template = """
+	<div style="background-color:#2F4F4F;padding:2px">
+	<h3 style="color:#FF6347;text-align:left;">Please adhere to the template below to fill in applicant details for predicting defaulting tendency</h3>
+	</div>
+	"""
+	st.markdown(html_template,unsafe_allow_html=True)
+	st.download_button("Download Applicant details template", csv, "applicants_details_template.csv", key='download-csv')	
+
+	html_uploader = """
+	<div style="background-color:#2F4F4F;padding:2px">
+	<h3 style="color:#FF6347;text-align:left;">Please upload applicant/s' details in required format</h3>
+	</div>
+	"""
+	st.markdown(html_uploader,unsafe_allow_html=True)
+	uploaded_file = st.file_uploader(" ")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
@@ -136,6 +155,12 @@ def main():
 		col_names.append('Defaulter Tendency')
 		pred_append.columns=col_names
 		csv=convert_df(pred_append)
+		html_file_dl = """
+		<div style="background-color:#2F4F4F;padding:2px">
+		<h3 style="color:#FF6347;text-align:left;">For downloading the predictions appended to the applicant details, click below link.</h3>
+		</div>
+		"""
+		st.markdown(html_file_dl,unsafe_allow_html=True)
 		st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
 
 if __name__=='__main__':
