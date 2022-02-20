@@ -102,26 +102,21 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	main_bg = "loan.jpg"
-	main_bg_ext = "jpg"
+	
+	header_pic = Image.open('loan.jpg')
+	st.image(header_pic, use_column_width=True)
+	# Side bar portion of code
+	author_pic = Image.open('space.jpg')
+	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
+	st.sidebar.markdown("[Hello](https://github.com/S-DeFerrari)")
+	st.sidebar.write("This app is powered by Machine Learning!")
+	st.sidebar.write("It uses a Random Forest Classification model "
+			 "trained with Kaggle's now legendary Titanic Survivor dataset. This model was correct 83.6% of the "
+			 "time when it came to predicting whether a person made it onto a lifeboat or was lost"
+			 " at sea.")
+	st.sidebar.write("I hope you enjoy this and remember:")
+	st.sidebar.write("Women and Children First!")
 
-	side_bg = "space.jpg"
-	side_bg_ext = "jpg"
-	
-	st.markdown(
-		f"""
-		<style>
-		.reportview-container {{
-			background: url(data:image/{main_bg_ext};base64,{base64.b64encode(open(main_bg, "rb").read()).decode()})
-		}}
-	   .sidebar .sidebar-content {{
-			background: url(data:image/{side_bg_ext};base64,{base64.b64encode(open(side_bg, "rb").read()).decode()})
-		}}
-		</style>
-		""",
-		unsafe_allow_html=True
-	)
-	
 	st.title(" ")
 	html_temp = """
 	<div style="background-color:#FFEFD5;padding:15px">
