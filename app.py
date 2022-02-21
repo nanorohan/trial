@@ -157,7 +157,7 @@ def main():
 	}	
 	p {
 	  font-size: 23px;
-	  color: #F7EB9D
+	  color: #F7EB9D;
 	  font-family: Playfair, bold;
 	  text-align: center
 	}
