@@ -126,10 +126,10 @@ def main():
 	st.title(" ")
 	html_title = """
 	<style> 
-	#rcorners1 {border-radius: 25px; border: 2px solid #73AD21; background: #2F4F4F; padding: 20px; width: 500px; height: 150px;
+	#rcorners1 {border-radius: 25px; border: 5px solid #000080; background: #FAEBD7; padding: 20px; width: 500px; height: 150px;
 	}
 	</style>
-	<p id="rcorners1">Client Defaulter Tendency</p>
+	<p id="rcorners1"><h5 style="color:#FF6347;text-align:center;">Client Defaulter Tendency</h5></p>
 
 	"""	
 	st.markdown(html_title,unsafe_allow_html=True)
