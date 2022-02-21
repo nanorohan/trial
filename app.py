@@ -122,7 +122,7 @@ def main():
 	  font-size: 23px;
 	  color: #151B54;
 	  font-family: Playfair, bold;
-	  text-align: center
+	  text-align: center;
 	}	
 	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
 	}	
@@ -159,7 +159,7 @@ def main():
 	  font-size: 23px;
 	  color: #F7EB9D;
 	  font-family: Playfair, bold;
-	  text-align: center
+	  text-align: center;
 	}
 	</style>
 	<br>
@@ -182,7 +182,7 @@ def main():
 	  font-size: 23px;
 	  color: #151B54;
 	  font-family: Playfair, bold;
-	  text-align: center
+	  text-align: center;
 	}	
 	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
 	}	
@@ -217,7 +217,7 @@ def main():
 		  font-size: 23px;
 		  color: #151B54;
 		  font-family: Playfair, bold;
-		  text-align: center
+		  text-align: center;
 		}	
 		#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
 		}	
