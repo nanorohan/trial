@@ -112,7 +112,17 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	
+	st.set_page_config(
+	     page_title="Loan Defaulter Predictor",
+	     page_icon="💸",
+	     layout="wide",
+	     initial_sidebar_state="collapsed",
+	     menu_items={
+		 'Get Help': 'https://www.extremelycoolapp.com/help',
+		 'Report a bug': "nanorohan@gmail.com",
+		 'About': "This"
+	     }
+	 )	
 	header_pic = Image.open('loan_alt.jpg')
 	st.image(header_pic)	
 	html_title = """
