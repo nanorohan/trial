@@ -150,10 +150,8 @@ def main():
 	html_template = """
 	<html>
 	<body>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px;
+	#rcorners2 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px;
 	}	
 	p {
 	  font-size: 23px;
@@ -163,12 +161,13 @@ def main():
 	}
 	</style>
 	<br>
-	<p id="rcorners1" >Please adhere to the template below to fill in applicant details for predicting defaulting tendency</p>
+	<p id="rcorners2" >Please adhere to the template below to fill in applicant details for predicting defaulting tendency</p>
 	<br>
      	</body>
      	</html>	
 	"""
 	st.markdown(html_template,unsafe_allow_html=True)
+	
 	with open("applicants_details_template.csv") as template_file:
 		st.download_button("Download Applicant details template", template_file, "applicants_details_template.csv", key='download-csv')	
 	print("\n\n\n\n")
