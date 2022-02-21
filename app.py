@@ -109,6 +109,55 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
+	
+	html_photo = """
+	
+	<body>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<style> 
+    	body, html {
+  	height: 100%;
+  	margin: 0;
+  	}
+    	#rcorners1 {border-radius: 15px; border: 2.5px solid #000080; background: #FAEBD7; padding: 10px; text-align: center;
+	}
+	.hero-image {
+	  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("loan.jpg");
+	  height: 50%;
+	  background-position: center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	  position: relative;
+	}
+
+	.hero-text {
+	  text-align: center;
+	  position: absolute;
+	  font-family: Georgia, serif;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  color: white;
+	}
+	p {
+	  font-size: 20px;
+	  color: tomato
+
+	}
+	</style>
+   
+    <div class="hero-image">
+  <div class="hero-text">
+    <h1 style="font-size:40px">CLIENT DEFAULTER TENDENCY PREDICTOR</h1>
+     </div>
+</div>
+<br>
+	<p id="rcorners1" >Client Defaulter Tendency Predictor</p>
+     
+</body>	
+	"""
+	
 	header_pic = Image.open('loan.jpg')
 	st.image(header_pic, use_column_width=True)
 	# Side bar portion of code
@@ -129,7 +178,7 @@ def main():
 	#rcorners1 {border-radius: 25px; border: 5px solid #000080; background: #FAEBD7; padding: 20px; width: 500px; height: 150px;
 	}
 	</style>
-	<p id="rcorners1"><h5 style="color:#FF6347;text-align:center;">Client Defaulter Tendency</h5></p>
+	<p id="rcorners1"><style="color:#FF6347;text-align:center;">Client Defaulter Tendency</h5></p>
 
 	"""	
 	st.markdown(html_title,unsafe_allow_html=True)
