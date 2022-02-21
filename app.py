@@ -112,26 +112,29 @@ def main():
 	
 	header_pic = Image.open('loan.jpg')
 	st.image(header_pic)	
-	html_photo = """
+	html_title = """
 	<html>
 	<body>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #98FB98; background: #800080; padding: 20px;
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
 	}	
 	p {
-	  font-size: 20px;
-	  color: #FFEFD5
-	  font-family: Georgia, serif;
+	  font-size: 30px;
+	  color: #12232E
+	  font-family: Garamond, serif;
+	  text-align: center
 	}
 	</style>
 	<br>
 	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
+	<br>
+	<br>
      	</body>
      	</html>
 	"""
-	st.markdown(html_photo,unsafe_allow_html=True)	
+	st.markdown(html_title,unsafe_allow_html=True)	
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
@@ -144,61 +147,87 @@ def main():
 	st.sidebar.write("I hope you enjoy this and remember:")
 	st.sidebar.write("Women and Children First!")
 
-	st.title(" ")
-	html_title = """
+	html_template = """
+	<html>
+	<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #98FB98; background: #800080; padding: 20px;
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #f2d53c; padding: 20px;
 	}	
 	p {
-	  font-size: 20px;
-	  color: #FFEFD5
-	  font-family: Georgia, serif;
+	  font-size: 30px;
+	  color: #ff3a22
+	  font-family: Garamond, serif;
+	  text-align: center
 	}
 	</style>
 	<br>
-	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
+	<p id="rcorners1" >Please adhere to the template below to fill in applicant details for predicting defaulting tendency</p>
+	<br>
      	</body>
-     	</html>
-	"""	
-	st.markdown(html_title,unsafe_allow_html=True)
-	print("\n\n\n\n")
-	html_template = """
-	<div style="background-color:#2F4F4F;padding:2px">
-	<h5 style="color:#FF6347;text-align:left;">Please adhere to the template below to fill in applicant details for predicting defaulting tendency</h5>
-	</div>
+     	</html>	
 	"""
 	st.markdown(html_template,unsafe_allow_html=True)
 	with open("applicants_details_template.csv") as template_file:
 		st.download_button("Download Applicant details template", template_file, "applicants_details_template.csv", key='download-csv')	
 	print("\n\n\n\n")
 	html_uploader = """
-	<div style="background-color:#2F4F4F;padding:2px">
-	<h5 style="color:#FF6347;text-align:left;">Please upload applicant/s' details in required format</h5>
-	</div>
-	"""
-	print("\n\n\n\n")
+	<html>
+	<body>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<style> 
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
+	}	
+	p {
+	  font-size: 30px;
+	  color: #12232E
+	  font-family: Garamond, serif;
+	  text-align: center
+	}
+	</style>
+	<br>
+	<p id="rcorners1" >Please upload applicant details in required format</p>
+	<br>
+     	</body>
+     	</html>
+	"""	
 	st.markdown(html_uploader,unsafe_allow_html=True)
 	uploaded_file = st.file_uploader(" ")       
 	if uploaded_file is not None:
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
-		translation= {39: None}
-		for i in range(len(query_prediction)):
-			st.write(query_prediction[i].translate(translation))
+		#translation= {39: None}
+		#for i in range(len(query_prediction)):
+		st.write(query_prediction)
 		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
 		col_names.append('Defaulter Tendency')
 		pred_append.columns=col_names
 		csv=convert_df(pred_append)
-		print("\n\n\n\n")
+
 		html_file_dl = """
+		<html>
+		<body>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 		<style> 
-		#rcorners1 {border-radius: 25px; border: 2px solid #73AD21; background: #2F4F4F; padding: 20px; width: 500px; height: 150px;
+		#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
+		}	
+		p {
+		  font-size: 30px;
+		  color: #12232E
+		  font-family: Garamond, serif;
+		  text-align: center
 		}
 		</style>
-		<p id="rcorners1">For downloading the predictions appended to the applicant details, click below link.</p>
-
+		<br>
+		<p id="rcorners1" >For downloading the predictions appended to the applicant details, click below link</p>
+		<br>
+		</body>
+		</html>
 		"""
 		st.markdown(html_file_dl,unsafe_allow_html=True)
 		st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
