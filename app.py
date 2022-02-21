@@ -158,8 +158,8 @@ def main():
      </html>
 	"""
 	st.markdown(html_photo,unsafe_allow_html=True)	
-	#header_pic = Image.open('loan.jpg')
-	#st.image(header_pic, use_column_width=True)
+	header_pic = Image.open('loan.jpg')
+	st.image(header_pic, width=100%)
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
