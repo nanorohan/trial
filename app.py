@@ -116,14 +116,14 @@ def main():
   	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-    	body, html {
+    	body{
   	height: 100%;
   	margin: 0;
   	}
     	#rcorners1 {border-radius: 15px; border: 2.5px solid #000080; background: #FAEBD7; padding: 10px; text-align: center;
 	}
 	.hero-image {
-	  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("loan.jpg");
+	  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("space.jpg");
 	  height: 50%;
 	  background-position: center;
 	  background-repeat: no-repeat;
