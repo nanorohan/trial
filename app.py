@@ -111,6 +111,8 @@ def convert_df(df):
 def main():
 	
 	html_photo = """
+	<html>
+	<body>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
@@ -152,11 +154,12 @@ def main():
 </div>
 <br>
 	<p id="rcorners1" >Client Defaulter Tendency Predictor</p>
-     
+     </body>
+     </html>
 	"""
 	st.markdown(html_photo,unsafe_allow_html=True)	
-	header_pic = Image.open('loan.jpg')
-	st.image(header_pic, use_column_width=True)
+	#header_pic = Image.open('loan.jpg')
+	#st.image(header_pic, use_column_width=True)
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
