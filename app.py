@@ -109,7 +109,7 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	st.markdown(html_photo,unsafe_allow_html=True)	
+	
 	header_pic = Image.open('loan.jpg')
 	st.image(header_pic)	
 	html_photo = """
@@ -118,11 +118,11 @@ def main():
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 25px; border: 5px solid #000080; background: #FAEBD7; padding: 20px;
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #98FB98; background: #800080; padding: 20px;
 	}	
 	p {
 	  font-size: 20px;
-	  color: tomato
+	  color: #FFEFD5
 	  font-family: Georgia, serif;
 	}
 	</style>
@@ -131,7 +131,7 @@ def main():
      	</body>
      	</html>
 	"""
-
+	st.markdown(html_photo,unsafe_allow_html=True)	
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
@@ -147,11 +147,18 @@ def main():
 	st.title(" ")
 	html_title = """
 	<style> 
-	#rcorners1 {border-radius: 25px; border: 5px solid #000080; background: #FAEBD7; padding: 20px; width: 500px; height: 150px;
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #98FB98; background: #800080; padding: 20px;
+	}	
+	p {
+	  font-size: 20px;
+	  color: #FFEFD5
+	  font-family: Georgia, serif;
 	}
 	</style>
-	<p id="rcorners1"><style="color:#FF6347;text-align:center;">Client Defaulter Tendency</h5></p>
-
+	<br>
+	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
+     	</body>
+     	</html>
 	"""	
 	st.markdown(html_title,unsafe_allow_html=True)
 	print("\n\n\n\n")
