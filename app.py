@@ -162,9 +162,12 @@ def main():
 		csv=convert_df(pred_append)
 		print("\n\n\n\n")
 		html_file_dl = """
-		<div style="background-color:#2F4F4F;padding:2px">
-		<h5 style="color:#FF6347;text-align:left;">For downloading the predictions appended to the applicant details, click below link.</h5>
-		</div>
+		<style> 
+		#rcorners1 {border-radius: 25px; border: 2px solid #73AD21; background: #2F4F4F; padding: 20px; width: 500px; height: 150px;
+		}
+		</style>
+		<p id="rcorners1">For downloading the predictions appended to the applicant details, click below link.</p>
+
 		"""
 		st.markdown(html_file_dl,unsafe_allow_html=True)
 		st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
