@@ -118,14 +118,14 @@ def main():
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
-	}	
 	p {
 	  font-size: 30px;
 	  color: #12232E
 	  font-family: Garamond, serif;
 	  text-align: center
-	}
+	}	
+	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
+	}	
 	</style>
 	<br>
 	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
