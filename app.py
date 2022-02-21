@@ -125,10 +125,13 @@ def main():
 
 	st.title(" ")
 	html_title = """
-	<div style="background-color:#FFEFD5;padding:15px">
-	<h2 style="color:#191970;text-align:center;">Client Defaulter Tendency</h2>
-	</div>
-	"""
+	<style> 
+	#rcorners1 {border-radius: 25px; border: 2px solid #73AD21; background: #2F4F4F; padding: 20px; width: 500px; height: 150px;
+	}
+	</style>
+	<p id="rcorners1">Client Defaulter Tendency</p>
+
+	"""	
 	st.markdown(html_title,unsafe_allow_html=True)
 	print("\n\n\n\n")
 	html_template = """
