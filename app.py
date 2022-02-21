@@ -119,7 +119,7 @@ def main():
 	     initial_sidebar_state="collapsed",
 	     menu_items={
 		 'Get Help': 'https://www.extremelycoolapp.com/help',
-		 'Report a bug': "mailto:nanorohan@gmail.com",
+		 'Report a bug': "https://github.com/nanorohan",
 		 'About': "This"
 	     }
 	 )	
