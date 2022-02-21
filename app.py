@@ -157,7 +157,7 @@ def main():
      
 </body>	
 	"""
-	
+	st.markdown(html_photo,unsafe_allow_html=True)	
 	header_pic = Image.open('loan.jpg')
 	st.image(header_pic, use_column_width=True)
 	# Side bar portion of code
