@@ -97,13 +97,16 @@ def inference(query):
 	query_categorical_imputed_ohe = ohe.transform(query_categorical_imputed)
 	query_data = np.concatenate((query_numerical_imputed_scaled, query_categorical_imputed_ohe.toarray()), axis = 1)
 	predictions = model.predict(query_data)
-	pred_cat=["Default Tendency"]
+	pred_cat=[]
 	for i in range(len(predictions)):
 		if predictions[i]==0:
 			pred_cat.append("Low")
 		else:
 			pred_cat.append("High")
-	return pred_cat
+	applicant_no=query.iloc[:, 0]
+	pred_out=pd.DataFrame(pred_cat, columns = ['Defaulter Tendency'])
+	pred_out=pd.concat([applicant_no,pred_out], axis=1, ignore_index=True)
+	return pred_out
 @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
@@ -197,9 +200,7 @@ def main():
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
-		#translation= {39: None}
-		#for i in range(len(query_prediction)):
-		st.write(query_prediction)
+		st.dataframe(query_prediction)
 		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
 		col_names.append('Defaulter Tendency')
