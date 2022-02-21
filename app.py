@@ -109,57 +109,29 @@ def convert_df(df):
    return df.to_csv().encode('utf-8')
    
 def main():
-	
+	st.markdown(html_photo,unsafe_allow_html=True)	
+	header_pic = Image.open('loan.jpg')
+	st.image(header_pic)	
 	html_photo = """
 	<html>
 	<body>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-    	body{
-  	height: 100%;
-  	margin: 0;
-  	}
-    	#rcorners1 {border-radius: 15px; border: 2.5px solid #000080; background: #FAEBD7; padding: 10px; text-align: center;
-	}
-	.hero-image {
-	  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url("space.jpg");
-	  height: 50%;
-	  background-position: center;
-	  background-repeat: no-repeat;
-	  background-size: cover;
-	  position: relative;
-	}
-
-	.hero-text {
-	  text-align: center;
-	  position: absolute;
-	  font-family: Georgia, serif;
-	  top: 50%;
-	  left: 50%;
-	  transform: translate(-50%, -50%);
-	  color: white;
-	}
+	#rcorners1 {border-radius: 25px; border: 5px solid #000080; background: #FAEBD7; padding: 20px;
+	}	
 	p {
 	  font-size: 20px;
 	  color: tomato
-
+	  font-family: Georgia, serif;
 	}
 	</style>
-   
-    <div class="hero-image">
-  <div class="hero-text">
-    <h1 style="font-size:40px">CLIENT DEFAULTER TENDENCY PREDICTOR</h1>
-     </div>
-</div>
-<br>
-	<p id="rcorners1" >Client Defaulter Tendency Predictor</p>
-     </body>
-     </html>
+	<br>
+	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
+     	</body>
+     	</html>
 	"""
-	st.markdown(html_photo,unsafe_allow_html=True)	
-	header_pic = Image.open('loan.jpg')
-	st.image(header_pic, width=100%)
+
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
