@@ -110,7 +110,7 @@ def convert_df(df):
    
 def main():
 	
-	header_pic = Image.open('loan.jpg')
+	header_pic = Image.open('loan_alt.jpg')
 	st.image(header_pic)	
 	html_title = """
 	<html>
@@ -155,7 +155,7 @@ def main():
 	}	
 	p {
 	  font-size: 23px;
-	  color: #F7EB9D;
+	  color: #FF6347;
 	  font-family: Playfair, bold;
 	  text-align: center;
 	}
