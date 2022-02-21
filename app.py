@@ -119,12 +119,12 @@ def main():
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
 	p {
-	  font-size: 30px;
-	  color: #12232E
-	  font-family: Garamond, serif;
+	  font-size: 23px;
+	  color: #151B54;
+	  font-family: Playfair, bold;
 	  text-align: center
 	}	
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
+	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
 	}	
 	</style>
 	<br>
@@ -153,12 +153,12 @@ def main():
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #f2d53c; padding: 20px;
+	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px;
 	}	
 	p {
-	  font-size: 30px;
-	  color: #ff3a22
-	  font-family: Garamond, serif;
+	  font-size: 23px;
+	  color: #F7EB9D
+	  font-family: Playfair, bold;
 	  text-align: center
 	}
 	</style>
@@ -178,19 +178,18 @@ def main():
 	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 	<style> 
-	#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
-	}	
 	p {
-	  font-size: 30px;
-	  color: #12232E
-	  font-family: Garamond, serif;
+	  font-size: 23px;
+	  color: #151B54;
+	  font-family: Playfair, bold;
 	  text-align: center
-	}
+	}	
+	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
+	}	
 	</style>
 	<br>
-	<p id="rcorners1" >Please upload applicant details in required format</p>
-	<br>
-     	</body>
+	<p id="rcorners1" >Upload applicant details in required format</p>
+	</body>
      	</html>
 	"""	
 	st.markdown(html_uploader,unsafe_allow_html=True)
@@ -214,18 +213,17 @@ def main():
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 		<style> 
-		#rcorners1 {border-radius: 20px; border: 2.5px solid #a28089; background: #abd699; padding: 20px;
-		}	
 		p {
-		  font-size: 30px;
-		  color: #12232E
-		  font-family: Garamond, serif;
+		  font-size: 23px;
+		  color: #151B54;
+		  font-family: Playfair, bold;
 		  text-align: center
-		}
+		}	
+		#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
+		}	
 		</style>
 		<br>
 		<p id="rcorners1" >For downloading the predictions appended to the applicant details, click below link</p>
-		<br>
 		</body>
 		</html>
 		"""
