@@ -137,7 +137,6 @@ def main():
 		    Applicants deemed capable of repaying the loan shall be labelled Low under defaulting tendency and those deemed as incapable 
 		    shall be labelled as high.    
                 </p>    
-		<br>
             </div>
         </div>
 	"""
@@ -145,6 +144,7 @@ def main():
 
 	# Side bar portion of code
 	overview_desc = """
+	<h2 style="color:#FFF8DC; line-height: 1.35; font-family:Playfair;">Overview</h2>
 	<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
 	    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
 	    and industries alike.
@@ -159,7 +159,7 @@ def main():
 	    Applicants deemed capable of repaying the loan are  
         </p>    
     	"""
-	st.sidebar.markdown(overview_desc)
+	st.sidebar.write(overview_desc)
 	st.sidebar.write("This app is powered by Machine Learning!")
 	st.sidebar.write("It uses a Gradient Boosting Classifier model from SKlearn library trained with Kaggle's "
 			 "[Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk/overview)."
