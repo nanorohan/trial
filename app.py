@@ -105,7 +105,7 @@ def inference(query):
 			pred_cat.append("High")
 	applicant_no=query.iloc[:, 0]
 	pred_out=pd.DataFrame(pred_cat, columns = ['Defaulter Tendency'])
-	pred_out=pd.concat([applicant_no,pred_out], axis=1, ignore_index=True)
+	pred_out=pd.concat([applicant_no,pred_out], axis=1, columns = ['Applicant Number','Defaulter Tendency'], ignore_index=True)
 	return pred_out
 @st.cache
 def convert_df(df):
@@ -126,8 +126,8 @@ def main():
 	header_pic = Image.open('loan_alt.jpg')
 	st.image(header_pic)
 	home_page = f"""
-        <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
-            <div style="float:center; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:10px;">
+        <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:5px;">
+            <div style="float:justified; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:5px;">
                 <p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
                     Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
 		    and industries alike.
@@ -138,6 +138,8 @@ def main():
 		    <br>
 		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
 		    "predicts" whether the client will be able to repay the loan or not.
+		    <br>
+		    Applicants deemed capable of repaying the loan are  
                 </p>    
 		<br>
             </div>
@@ -208,10 +210,10 @@ def main():
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
 		st.dataframe(query_prediction)
-		pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
-		pred_append=pd.concat([query,pred_col], axis=1, ignore_index=True)
-		col_names.append('Defaulter Tendency')
-		pred_append.columns=col_names
+		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
+		pred_append=pd.concat([query,pred_col['Defaulter Tendency'], axis=1, ignore_index=True)
+		#col_names.append('Defaulter Tendency')
+		#pred_append.columns=col_names
 		csv=convert_df(pred_append)
 
 		html_file_dl = """
