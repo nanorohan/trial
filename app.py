@@ -135,8 +135,8 @@ def main():
 		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether 
 		    the client will be able to repay the loan or not.
 		    <br>
-		    Applicants deemed capable of repaying the loan shall be labelled <h2>Low</h2> under defaulting tendency and those deemed as incapable 
-		    shall be labelled as <h2>High</h2>.    
+		    Applicants deemed capable of repaying the loan shall be labelled <b>Low</b> under defaulting tendency and those deemed as incapable 
+		    shall be labelled as <b>High</b>.    
                 </p>    
             </div>
         </div>
@@ -145,20 +145,22 @@ def main():
 
 	# Side bar portion of code
 	overview_desc = f"""
-	<div>
-		<h2 style="color:#FFF8DC; line-height: 1.35; font-family:Playfair;">Overview</h2>
-		<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-		    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
-		    and industries alike.
-		    <br>
-		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
-		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
-		    a system in place which will accurately predict the loan defaulters even before approving the loan.
-		    <br>
-		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
+        <div style="display:flex;justify-content:space-between;background:#FFEBCD;padding:10px;border-radius:5px;margin:5px;">
+            <div style="float:justify; text-align: justify; width:100%; background:#FFEBCD; padding:10px; border-radius:5px; margin:5px;">
+                <p style="text-align: justify; color:#8B0000; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		<h2 style="color:#8B0000; line-height: 1.35; font-family:Playfair;">Why this app?</h2>
+		<p style="color:#8B0000; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		Post-pandemic world has disrupted many aspects of life including financial requirements. 
+		Many are resorting to loans to ensure basic subsistence. Some struggle to get loans due to insufficient or 
+		non-existent credit histories. And, unfortunately, such a population is often taken advantage of by unscrupulous lenders. 
+		<br>
+		Secondly, lending institutions need to ensure very low credit delinquency rates to stay profitable and provide loans to 
+		worthy applicants. An objective model helps the lending agencies disburse prudent loans. This system helps them process 
+		and disburse loans faster, increase profit and client base  as well as possibly protect genuine debtors from predatory lenders.
+		<br>
+		Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
 		    "predicts" whether the client will be able to repay the loan or not.
-		    <br>
-		    Applicants deemed capable of repaying the loan are  
+
 		</p> 
 	</div>
     	"""
