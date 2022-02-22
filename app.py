@@ -104,8 +104,8 @@ def inference(query):
 		else:
 			pred_cat.append("High")
 	applicant_no=query.iloc[:, 0]
-	pred_out=pd.DataFrame(pred_cat, columns = ['Defaulter Tendency'])
-	pred_out=pd.concat([applicant_no,pred_out], axis=1, ignore_index=True)
+	pred_df=pd.DataFrame(pred_cat, columns = ['Defaulting Tendency'])
+	pred_out=pd.concat([applicant_no,pred_df], axis=1, ignore_index=True)
 	return pred_out
 @st.cache
 def convert_df(df):
