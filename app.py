@@ -130,12 +130,13 @@ def main():
         <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:5px;">
             <div style="float:justify; text-align: justify; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:5px;">
                 <p style="text-align: justify; color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-		    Loan Defaulter Predictor helps you identify potential defaulters. 
+		    <b>Loan Defaulter Predictor helps you identify potential defaulters.</b>
+		    <br>
 		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether 
 		    the client will be able to repay the loan or not.
 		    <br>
-		    Applicants deemed capable of repaying the loan shall be labelled Low under defaulting tendency and those deemed as incapable 
-		    shall be labelled as high.    
+		    Applicants deemed capable of repaying the loan shall be labelled <b>Low</b> under defaulting tendency and those deemed as incapable 
+		    shall be labelled as <b>High</b>.    
                 </p>    
             </div>
         </div>
