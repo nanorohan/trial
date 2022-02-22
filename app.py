@@ -105,7 +105,7 @@ def inference(query):
 			pred_cat.append("High")
 	applicant_no=query.iloc[:, 0]
 	pred_out=pd.DataFrame(pred_cat, columns = ['Defaulter Tendency'])
-	pred_out=pd.concat([applicant_no,pred_out], axis=1, columns = ['Applicant Number','Defaulter Tendency'], ignore_index=True)
+	pred_out=pd.concat([applicant_no,pred_out], axis=1, ignore_index=True)
 	return pred_out
 @st.cache
 def convert_df(df):
