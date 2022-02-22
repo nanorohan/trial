@@ -104,9 +104,10 @@ def inference(query):
 		else:
 			pred_cat.append("High")
 	applicant_no=query.iloc[:, 0]
-	pred_df=pd.DataFrame(pred_cat, columns = ['Defaulting Tendency'])
-	pred_out=pd.concat([applicant_no,pred_df], axis=1, ignore_index=True)
-	return pred_out
+	applicant_no['Defaulting Tendency']=pred_cat
+	#pred_df=pd.DataFrame(pred_cat, columns = ['Defaulting Tendency'])
+	#pred_out=pd.concat([applicant_no,pred_df], axis=1, ignore_index=True)
+	return applicant_no
 @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
@@ -207,8 +208,8 @@ def main():
 		st.dataframe(query_pred)
 		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=True)
-		#col_names.append('Defaulter Tendency')
-		#pred_append.columns=col_names
+		col_names.append('Defaulting Tendency')
+		pred_append.columns=col_names
 		csv=convert_df(pred_append)
 
 		html_file_dl = """
