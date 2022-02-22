@@ -127,8 +127,8 @@ def main():
 	st.image(header_pic)
 	home_page = f"""
         <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
-            <div style="float:right;width:100%;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
-                <p style="color:#FFF8DC;letter-spacing:1px;line-height: 1.6;font-size: 24px; font-family:Playfair;">
+            <div style="float:center; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:10px;">
+                <p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
                     Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
 		    and industries alike.
 		    <br>
@@ -186,10 +186,10 @@ def main():
 	#rcorners2 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px;
 	}	
 	p {
-	  font-size: 23px;
-	  color: #FF6347;
-	  font-family: Playfair, bold;
-	  text-align: center;
+	  color:#FF6347;
+	  font-size:23px;
+	  font-family:Playfair;
+	  text-align:center;
 	}
 	</style>
 	<br>
