@@ -205,7 +205,7 @@ def main():
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
 		query_pred=pd.DataFrame(query_prediction) 
-		query_pred.columns = ['Applicant ID', 'Defaulting Tendency'])
+		query_pred.columns = ['Applicant ID', 'Defaulting Tendency']
 		st.dataframe(query_pred)
 		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
 		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=False)
