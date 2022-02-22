@@ -211,7 +211,7 @@ def main():
 		query_prediction = inference(query)
 		st.dataframe(query_prediction)
 		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
-		pred_append=pd.concat([query,pred_col['Defaulter Tendency'], axis=1, ignore_index=True)
+		pred_append=pd.concat([query,query_prediction['Defaulter Tendency']], axis=1, ignore_index=True)
 		#col_names.append('Defaulter Tendency')
 		#pred_append.columns=col_names
 		csv=convert_df(pred_append)
