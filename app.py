@@ -144,20 +144,22 @@ def main():
 
 	# Side bar portion of code
 	overview_desc = """
-	<h2 style="color:#FFF8DC; line-height: 1.35; font-family:Playfair;">Overview</h2>
-	<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-	    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
-	    and industries alike.
-	    <br>
-	    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
-	    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
-	    a system in place which will accurately predict the loan defaulters even before approving the loan.
-	    <br>
-	    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
-	    "predicts" whether the client will be able to repay the loan or not.
-	    <br>
-	    Applicants deemed capable of repaying the loan are  
-        </p>    
+	<div>
+		<h2 style="color:#FFF8DC; line-height: 1.35; font-family:Playfair;">Overview</h2>
+		<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
+		    and industries alike.
+		    <br>
+		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
+		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
+		    a system in place which will accurately predict the loan defaulters even before approving the loan.
+		    <br>
+		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
+		    "predicts" whether the client will be able to repay the loan or not.
+		    <br>
+		    Applicants deemed capable of repaying the loan are  
+		</p> 
+	</div>
     	"""
 	st.sidebar.write(overview_desc)
 	st.sidebar.write("This app is powered by Machine Learning!")
