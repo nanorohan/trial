@@ -128,19 +128,14 @@ def main():
 	st.image(header_pic)
 	home_page = f"""
         <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:5px;">
-            <div style="float:justified; text-align: justify; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:5px;">
-                <p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-                    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
-		    and industries alike.
+            <div style="float:justify; text-align: justify; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:5px;">
+                <p style="text-align: justify; color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		    Loan Defaulter Predictor helps you identify potential defaulters. 
+		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether 
+		    the client will be able to repay the loan or not.
 		    <br>
-		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
-		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
-		    a system in place which will accurately predict the loan defaulters even before approving the loan.
-		    <br>
-		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
-		    "predicts" whether the client will be able to repay the loan or not.
-		    <br>
-		    Applicants deemed capable of repaying the loan are  
+		    Applicants deemed capable of repaying the loan shall be labelled Low under defaulting tendency and those deemed as incapable 
+		    shall be labelled as high.    
                 </p>    
 		<br>
             </div>
@@ -150,24 +145,19 @@ def main():
 
 	# Side bar portion of code
 	overview_desc = """
-        <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:5px;">
-            <div style="float:justified; text-align: justify; width:100%; background:#3E4248; padding:10px; border-radius:5px; margin:5px;">
-                <p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-                    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
-		    and industries alike.
-		    <br>
-		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
-		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
-		    a system in place which will accurately predict the loan defaulters even before approving the loan.
-		    <br>
-		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
-		    "predicts" whether the client will be able to repay the loan or not.
-		    <br>
-		    Applicants deemed capable of repaying the loan are  
-                </p>    
-		<br>
-            </div>
-        </div>
+	<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+	    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
+	    and industries alike.
+	    <br>
+	    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
+	    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
+	    a system in place which will accurately predict the loan defaulters even before approving the loan.
+	    <br>
+	    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
+	    "predicts" whether the client will be able to repay the loan or not.
+	    <br>
+	    Applicants deemed capable of repaying the loan are  
+        </p>    
     	"""
 	st.sidebar.markdown(overview_desc)
 	st.sidebar.write("This app is powered by Machine Learning!")
