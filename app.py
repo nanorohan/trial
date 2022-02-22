@@ -103,11 +103,11 @@ def inference(query):
 			pred_cat.append("Low")
 		else:
 			pred_cat.append("High")
-	applicant_no=query.iloc[:, 0]
-	applicant_no['Defaulting Tendency']=pred_cat
-	#pred_df=pd.DataFrame(pred_cat, columns = ['Defaulting Tendency'])
-	#pred_out=pd.concat([applicant_no,pred_df], axis=1, ignore_index=True)
-	return applicant_no
+	applicant_no=query['SK_ID_CURR'].copy()
+	#applicant_no['Defaulting Tendency']=pred_cat
+	pred_df=pd.DataFrame(pred_cat, columns = ['Defaulting Tendency'])
+	pred_out=pd.concat([applicant_no,pred_df], axis=1, ignore_index=False)
+	return pred_out
 @st.cache
 def convert_df(df):
    return df.to_csv().encode('utf-8')
@@ -207,9 +207,9 @@ def main():
 		query_pred=pd.DataFrame(query_prediction, columns = ['Applicant ID', 'Defaulting Tendency'])
 		st.dataframe(query_pred)
 		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
-		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=True)
-		col_names.append('Defaulting Tendency')
-		pred_append.columns=col_names
+		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=False)
+		#col_names.append('Defaulting Tendency')
+		#pred_append.columns=col_names
 		csv=convert_df(pred_append)
 
 		html_file_dl = """
