@@ -127,16 +127,19 @@ def main():
 	st.image(header_pic)
 	home_page = f"""
         <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
-            <div style="float:right;width:30%;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
-                <h3 style="color:#FFF8DC;letter-spacing:1px;line-height: 1.6;font-family:Merriweather;">
+            <div style="float:right;width:100%;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
+                <p style="color:#FFF8DC;letter-spacing:1px;line-height: 1.6;font-size: 24px; font-family:Playfair;">
                     Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
 		    and industries alike.
+		    <br>
 		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
 		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
-		    a system in place which will accurately predict the loan defaulters even before approving the loan. 
-		    Loan Defaulter Predictor helps you address this concern.
-		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether the client will be able to repay the loan or not.
-                    <br>
+		    a system in place which will accurately predict the loan defaulters even before approving the loan.
+		    <br>
+		    Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
+		    "predicts" whether the client will be able to repay the loan or not.
+                </p>    
+		<br>
             </div>
         </div>
 	"""
