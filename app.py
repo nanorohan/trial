@@ -149,12 +149,17 @@ def main():
 	st.write(home_page, unsafe_allow_html=True)
 
 	# Side bar portion of code
-	author_pic = Image.open('space.jpg')
-	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
-	st.sidebar.markdown("[Hello](https://github.com/S-DeFerrari)")
+	overview_desc = """
+	------------------------
+	## Overview
+	This is a web app built for easy explainability of machine learning models without writing any code in order to explain easily to non-technicals and stakeholders. 
+    	-------------------------
+    	"""
+	st.sidebar.markdown(overview_desc)
 	st.sidebar.write("This app is powered by Machine Learning!")
-	st.sidebar.write("It uses a Random Forest Classification model "
-			 "trained with Kaggle's now legendary Titanic Survivor dataset. This model was correct 83.6% of the "
+	st.sidebar.write("It uses a Gradient Boosting Classifier model from SKlearn library trained with Kaggle's "
+			 "[Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk/overview)."
+			 "This model was correct 83.6% of the "
 			 "time when it came to predicting whether a person made it onto a lifeboat or was lost"
 			 " at sea.")
 	st.sidebar.write("I hope you enjoy this and remember:")
