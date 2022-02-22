@@ -135,7 +135,7 @@ def main():
 		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether 
 		    the client will be able to repay the loan or not.
 		    <br>
-		    Applicants deemed capable of repaying the loan shall be labelled <h2>Low</h2b> under defaulting tendency and those deemed as incapable 
+		    Applicants deemed capable of repaying the loan shall be labelled <h2>Low</h2> under defaulting tendency and those deemed as incapable 
 		    shall be labelled as <h2>High</h2>.    
                 </p>    
             </div>
@@ -162,7 +162,7 @@ def main():
 		</p> 
 	</div>
     	"""
-	st.sidebar.write(overview_desc)
+	st.sidebar.write(overview_desc, unsafe_allow_html=True)
 	st.sidebar.write("This app is powered by Machine Learning!")
 	st.sidebar.write("It uses a Gradient Boosting Classifier model from SKlearn library trained with Kaggle's "
 			 "[Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk/overview)."
