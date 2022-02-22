@@ -140,6 +140,7 @@ def main():
             </div>
         </div>
 	"""
+	st.write(home_page, unsafe_allow_html=True)
 	html_title = """
 	<html>
 	<body>
@@ -162,7 +163,7 @@ def main():
      	</body>
      	</html>
 	"""
-	st.markdown(html_title,unsafe_allow_html=True)	
+	#st.markdown(html_title,unsafe_allow_html=True)	
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
