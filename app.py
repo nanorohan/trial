@@ -135,8 +135,8 @@ def main():
 		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether 
 		    the client will be able to repay the loan or not.
 		    <br>
-		    Applicants deemed capable of repaying the loan shall be labelled <b>Low</b> under defaulting tendency and those deemed as incapable 
-		    shall be labelled as <b>High</b>.    
+		    Applicants deemed capable of repaying the loan shall be labelled <h2>Low</h2b> under defaulting tendency and those deemed as incapable 
+		    shall be labelled as <h2>High</h2>.    
                 </p>    
             </div>
         </div>
@@ -144,7 +144,7 @@ def main():
 	st.write(home_page, unsafe_allow_html=True)
 
 	# Side bar portion of code
-	overview_desc = """
+	overview_desc = f"""
 	<div>
 		<h2 style="color:#FFF8DC; line-height: 1.35; font-family:Playfair;">Overview</h2>
 		<p style="color:#FFF8DC; line-height: 1.35;font-size: 23px; font-family:Playfair;">
