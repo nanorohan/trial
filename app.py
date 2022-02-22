@@ -144,29 +144,7 @@ def main():
         </div>
 	"""
 	st.write(home_page, unsafe_allow_html=True)
-	html_title = """
-	<html>
-	<body>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
-	<style> 
-	p {
-	  font-size: 23px;
-	  color: #151B54;
-	  font-family: Playfair, bold;
-	  text-align: center;
-	}	
-	#rcorners1 {border-radius: 20px; border: 3px solid #c83349; background: #ffcc5c; padding: 10px;
-	}	
-	</style>
-	<br>
-	<p id="rcorners1" >CLIENT DEFAULTER TENDENCY PREDICTOR</p>
-	<br>
-	<br>
-     	</body>
-     	</html>
-	"""
-	#st.markdown(html_title,unsafe_allow_html=True)	
+
 	# Side bar portion of code
 	author_pic = Image.open('space.jpg')
 	st.sidebar.image(author_pic, "Your humble app creator", use_column_width=True)
