@@ -163,16 +163,10 @@ def main():
 	<html>
 	<body>
 	<style> 
-	#rcorners2 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px;
+	#rcorners2 {border-radius: 20px; border: 3px solid #c83349; background: #1E323B; padding: 10px; color:tomato; 
+	font-size:23px; font-family:Playfair; text-align:center;
 	}	
-	p {
-	  color:#FF6347;
-	  font-size:23px;
-	  font-family:Playfair;
-	  text-align:center;
-	}
 	</style>
-	<br>
 	<p id="rcorners2" >Please adhere to the template below to fill in applicant details for predicting defaulting tendency</p>
 	<br>
      	</body>
@@ -209,9 +203,10 @@ def main():
 		query = dataframe_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
 		query_prediction = inference(query)
-		st.dataframe(query_prediction)
+		query_pred=pd.DataFrame(query_prediction, columns = ['Applicant ID', 'Defaulting Tendency'])
+		st.dataframe(query_pred)
 		#pred_col=pd.DataFrame(query_prediction, columns = ['Defaulter Tendency'])
-		pred_append=pd.concat([query,query_prediction['Defaulter Tendency']], axis=1, ignore_index=True)
+		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=True)
 		#col_names.append('Defaulter Tendency')
 		#pred_append.columns=col_names
 		csv=convert_df(pred_append)
