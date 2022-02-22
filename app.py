@@ -124,7 +124,22 @@ def main():
 	     }
 	 )	
 	header_pic = Image.open('loan_alt.jpg')
-	st.image(header_pic)	
+	st.image(header_pic)
+	home_page = f"""
+        <div style="display:flex;justify-content:space-between;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
+            <div style="float:right;width:30%;background:#3E4248;padding:10px;border-radius:5px;margin:10px;">
+                <h3 style="color:#FFF8DC;letter-spacing:1px;line-height: 1.6;font-family:Merriweather;">
+                    Loans are an important means to tide over difficult times, aim for upward mobility and in the development of individuals
+		    and industries alike.
+		    unprecedented accessibility in credit availability, market competition and consumption has led to an increase in losses resulting from bad loans.
+		    Instead of making money from loan interest, lenders are suffering a huge capital loss. In order to prevent the loss, it is very important to have 
+		    a system in place which will accurately predict the loan defaulters even before approving the loan. 
+		    Loan Defaulter Predictor helps you address this concern.
+		    Given a loan application of a potential or existing client at Home Credit, this app "predicts" whether the client will be able to repay the loan or not.
+                    <br>
+            </div>
+        </div>
+	"""
 	html_title = """
 	<html>
 	<body>
