@@ -148,31 +148,34 @@ def main():
         <div style="display:flex;justify-content:space-between;background:#FFEBCD;padding:10px;border-radius:5px;margin:5px;">
             <div style="float:justify; text-align: justify; width:100%; background:#FFEBCD; padding:10px; border-radius:5px; margin:5px;">
                 <p style="text-align: justify; color:#8B0000; line-height: 1.35;font-size: 23px; font-family:Playfair;">
-		<h2 style="color:#8B0000; line-height: 1.35; font-family:Playfair;">Why this app?</h2>
-		<p style="color:#8B0000; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		<h2 style="color:#000059; font-family:Playfair;">Why this app?</h2>
+		<p style="color:#8B0000; text-align: justify; line-height: 1.35;font-size: 23px; font-family:Playfair;">
 		Post-pandemic world has disrupted many aspects of life including financial requirements. 
 		Many are resorting to loans to ensure basic subsistence. Some struggle to get loans due to insufficient or 
 		non-existent credit histories. And, unfortunately, such a population is often taken advantage of by unscrupulous lenders. 
+		Conversely, lending institutions need to ensure very low credit delinquency rates to stay profitable and provide loans to 
+		worthy applicants.
 		<br>
-		Secondly, lending institutions need to ensure very low credit delinquency rates to stay profitable and provide loans to 
-		worthy applicants. An objective model helps the lending agencies disburse prudent loans. This system helps them process 
-		and disburse loans faster, increase profit and client base  as well as possibly protect genuine debtors from predatory lenders.
+ 		An objective model helps the lending agencies disburse prudent loans. This system helps process and disburse loans faster, 
+		increase profit and client base  as well as possibly protect genuine debtors from predatory lenders.
 		<br>
-		Loan Defaulter Predictor helps you address this concern. Given a loan application of a potential or existing client at Home Credit, this app 
-		    "predicts" whether the client will be able to repay the loan or not.
-
-		</p> 
+		Thus, this app.
+		<br>
+		<br>
+		</p>
+                <p style="text-align: justify; color:#8B0000; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		<h2 style="color:#000059; font-family:Playfair;">Behind the Secene</h2>
+		<p style="color:#8B0000; text-align: justify; line-height: 1.35;font-size: 23px; font-family:Playfair;">
+		This app is powered by Machine Learning! It uses a [Gradient Boosting Classifier model from SKlearn library]
+		(https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html) trained on Kaggle's 
+		[Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk/overview). I have used Streamlit & deployed this app on Heroku.
+		A complete repository of this app right from data preprocessing upto the deployment can be viewed on my [GitHub page](https://github.com/nanorohan)
+		Feedback and ideas may be directed [here](mailto:nanorohan@gmail.com)
+		</p>		
+	    </div>
 	</div>
     	"""
 	st.sidebar.write(overview_desc, unsafe_allow_html=True)
-	st.sidebar.write("This app is powered by Machine Learning!")
-	st.sidebar.write("It uses a Gradient Boosting Classifier model from SKlearn library trained with Kaggle's "
-			 "[Home Credit Default Risk dataset](https://www.kaggle.com/c/home-credit-default-risk/overview)."
-			 "This model was correct 83.6% of the "
-			 "time when it came to predicting whether a person made it onto a lifeboat or was lost"
-			 " at sea.")
-	st.sidebar.write("I hope you enjoy this and remember:")
-	st.sidebar.write("Women and Children First!")
 
 	html_template = """
 	<html>
