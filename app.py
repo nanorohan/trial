@@ -5,7 +5,7 @@ import numpy as np
 import pickle
 import data_loader
 from model_pipeline import inference, convert_df
-import app_elements
+from app_elements import app_intro, overview_desc, html_template, html_uploader, html_file_dl
 import streamlit as st
 import base64
 from PIL import Image
