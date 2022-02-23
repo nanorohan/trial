@@ -2,8 +2,8 @@
 import pandas as pd
 import csv
 import numpy as np
-from data_loader import df_size_optimizer, bureau_numerical_merge, bureau_categorical_merge, previous_numerical_merge, 
-previous_categorical_merge, model, imputer, scaler, imputer_constant, ohe
+from data_loader import (df_size_optimizer, bureau_numerical_merge, bureau_categorical_merge, previous_numerical_merge, 
+previous_categorical_merge, model, imputer, scaler, imputer_constant, ohe)
 
 #Define a function to create a pipeline for prediction
 def inference(query):
