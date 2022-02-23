@@ -20,7 +20,7 @@ def main():
 	header_pic = Image.open('loan_alt.jpg')
 	st.image(header_pic)
 
-	st.write(home_page, unsafe_allow_html=True)
+	st.write(app_intro, unsafe_allow_html=True)
 
 	st.sidebar.write(overview_desc, unsafe_allow_html=True)
 
