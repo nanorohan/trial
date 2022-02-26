@@ -35,16 +35,18 @@ def main():
 	if uploaded_file is not None:
 		query = df_size_optimizer(pd.read_csv(uploaded_file))
 		col_names=query.columns.values.tolist()
-		query_prediction = inference(query)
-		query_pred=pd.DataFrame(query_prediction) 
-		query_pred.columns = ['Applicant ID', 'Defaulting Tendency']
-		st.dataframe(query_pred)
-		pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=False)
-		csv=convert_df(pred_append)
-
-		st.markdown(html_file_dl,unsafe_allow_html=True)
-
-		st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
+		required_fields=template_file.columns.values.tolist()
+		if col_names==required_fields:
+			query_prediction = inference(query)
+			query_pred=pd.DataFrame(query_prediction)
+			query_pred.columns = ['Applicant ID', 'Defaulting Tendency']
+			st.dataframe(query_pred)
+			pred_append=pd.concat([query,query_pred['Defaulting Tendency']], axis=1, ignore_index=False)
+			csv=convert_df(pred_append)
+			st.markdown(html_file_dl,unsafe_allow_html=True)
+			st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
+		else:
+			st.warning('Input applicant form-fields are not in the prescribed format. Please ahdere to the template for processing.')
 		
 if __name__=='__main__':
     main()
