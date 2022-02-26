@@ -47,7 +47,7 @@ def main():
 			st.markdown(html_file_dl,unsafe_allow_html=True)
 			st.download_button("Press to Download", csv, "Defaulter_predictions.csv", key='download-csv')
 		else:
-			st.warning('Input applicant form-fields are not in the prescribed format. Please ahdere to the template for processing.')
+			st.error('Input applicant form-fields are not in the prescribed format. Please ahdere to the template for processing.')
 		
 if __name__=='__main__':
     main()
